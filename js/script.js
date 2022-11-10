@@ -67,4 +67,36 @@ $("#addToCartButton").click(function(){
     $("#articleQte").text(qteTotal);
     $("#articleTotal").text("$"+total);
     $("#notification").text(qteTotal);
+
+    if(qteTotal<=0)
+    {
+        $("#notification").css("display", "none");
+        $("#checkOutBtn").css("display", "none");
+        $(".articleCart").removeClass("added");
+    }
+    else
+    {
+        $("#notification").css("display", "block");
+        $("#checkOutBtn").css("display", "block");
+        $(".articleCart").addClass("added");
+    }
+});
+
+$("#destroyArticle").click(function(){
+    var qte = "0";
+    $("#articleQte").text(qte);
+    $("#articleTotal").text("$0");
+    $("#notification").text(qte);
+    if(qte<=0)
+    {
+        $("#notification").css("display", "none");
+        $("#checkOutBtn").css("display", "none");
+        $(".articleCart").removeClass("added");
+    }
+    else
+    {
+        $("#notification").css("display", "block");
+        $("#checkOutBtn").css("display", "block");
+        $(".articleCart").addClass("added");
+    }
 });
