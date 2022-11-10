@@ -342,6 +342,15 @@ nav #checkOutBtn
         margin-left: 22px;
         margin-right: 24px;
     }
+
+    nav #shoppingCart
+    {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        top: 130px;
+        width: calc(100vw - 40px);
+    }
 }
 
 /*header*/
