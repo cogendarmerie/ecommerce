@@ -96,6 +96,23 @@ nav #shoppingCartContainer:hover #shoppingCart
     animation: loadFromBottom .5s;
 }
 
+nav #shoppingCartBtnNotif
+{
+    position: relative;
+}
+
+nav #shoppingCartBtnNotif #notification
+{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    background-color: var(--Orange);
+    padding: 2px 10px;
+    font-size: 12px;
+    border-radius: 100rem;
+}
+
 nav #shoppingCart
 {
     position: absolute;

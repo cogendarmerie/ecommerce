@@ -66,4 +66,5 @@ $("#addToCartButton").click(function(){
     var total = parseInt(qteTotal) * parseInt(price);
     $("#articleQte").text(qteTotal);
     $("#articleTotal").text("$"+total);
+    $("#notification").text(qteTotal);
 });
