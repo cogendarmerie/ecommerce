@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root
+{
+    --Orange: hsl(26, 100%, 55%);
+    --Pale-orange: hsl(25, 100%, 94%);
+    --Very-dark-blue: hsl(220, 13%, 13%);
+    --Dark-grayish-blue: hsl(219, 9%, 45%);
+    --Grayish-blue: hsl(220, 14%, 75%);
+    --Light-grayish-blue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+}
+
+body
+{
+    margin: 0;
+    margin-left: 160px;
+    margin-right: 160px;
+    color: var(--Very-dark-blue);
+    font-family: "Kumbh Sans";
+    font-weight: 400;
+}
+
+@media screen and (max-width: 800px)
+{
+    body
+    {
+        margin: 0;
+    }
+}
+
+
+/*navbar*/
+nav
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    height: 120px;
+    width: 100%;
+}
+
+nav > div
+{
+    display: flex;
+    flex-direction: row;
+}
+
+nav #openBurgerMenu
+{
+    width: 16px;
+    background-image: url('../images/icon-menu.svg');
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+    margin-right: 16px;
+    margin-left: 24px;
+    display: none;
+}
+
+nav #linksBurgerMenu ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+nav #linksBurgerMenu ul a
+{
+    color: var(--Dark-grayish-blue);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+nav #profilePicture
+{
+    border-radius: 100rem;
+}
+
+nav > div:first-child > div, nav > div:nth-child(2) > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav #shoppingCartContainer
+{
+    position: relative;
+}
+
+nav #shoppingCart
+{
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    border-radius: 9px;
+    top: 100px;
+    left: -175px;
+    box-shadow: 0px 10px 25px 1px rgba(0,0,0,0.10);
+    width: 350px;
+}
+
+nav #shoppingCart > div:first-child
+{
+    padding: 0px 24px;
+}
+
+nav #shoppingCart > div:nth-child(2)
+{
+    padding: 16px 24px;
+}
+
+nav #shoppingCart > div:first-child
+{
+    border-bottom: 1px solid var(--Light-grayish-blue);
+    font-weight: 700;
+}
+
+nav #shoppingCart > div:nth-child(2)
+{
+    min-height: 150px;
+    position: relative;
+}
+
+nav #shoppingCart > div:nth-child(2)::after
+{
+    content: "You cart is empty.";
+    position: absolute;
+    z-index: -1;
+    left: 80px;
+    top: 50px;
+    font-weight: 700;
+    color: var(--Grayish-blue);
+}
+
+nav #shoppingCart .articleCart
+{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+nav #shoppingCart .articleCart > div:first-child > img
+{
+    height: 50px;
+    border-radius: 5px;
+}
+
+nav #shoppingCart .articleCart > div:nth-child(2)
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav #shoppingCart .articleCart > div:nth-child(2) > p
+{
+    text-transform: capitalize;
+    width: max-content;
+    color: var(--Grayish-blue);
+    margin: 0;
+    margin-left: 16px;
+}
+
+nav #shoppingCart .articleCart > div:nth-child(2) > p #articleTotal
+{
+    color: var(--Very-dark-blue);
+    font-weight: 700;
+}
+
+nav #checkOutBtn
+{
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--Orange);
+    color: white;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 24px;
+}
+
+@media screen and (min-width:801px)
+{
+    nav 
+    {        
+        border-bottom: 1px solid var(--Light-grayish-blue);
+    }
+
+    nav #linksBurgerMenu > div
+    {
+        height:100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav #linksBurgerMenu ul 
+    {
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 100ù;
+    }
+
+    nav #linksBurgerMenu ul li 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 2px solid transparent;
+    }
+
+    nav #linksBurgerMenu ul li:hover
+    {
+        border-bottom: 2px solid var(--Orange);
+    }
+
+    nav #linksBurgerMenu ul li a 
+    {
+        margin-left: 0;
+    }    
+
+    nav #linksBurgerMenu ul > li:not(:first-child)
+    {
+        margin-left: 30px;
+    }
+
+    nav #shoppingCartBtn
+    {
+        height: 22px;
+        cursor: pointer;
+    }
+
+    nav #profilePicture
+    {
+        height: 50px;
+        margin-left: 45px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width:800px)
+{
+    nav #openBurgerMenu
+    {
+        display: block;
+    }
+
+    nav #linksBurgerMenu:not(.open)
+    {
+        display: none;
+    }
+
+    nav #linksBurgerMenu.open
+    {
+        position: fixed;
+        z-index: 1000;
+        top: 0rem;
+        left: 0rem;
+        right: 0rem;
+        bottom: 0rem;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    nav #linksBurgerMenu #closeBurgerMenu
+    {
+        width: 16px;
+        height: 16px;
+        background-image: url('../images/icon-close.svg');
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-position: center;
+        margin-top: 24px;
+        margin-left: 24px;
+    }
+
+    nav #linksBurgerMenu > div
+    {
+        background-color: white;
+        height: 100%;
+        width: 70%;
+    }
+
+    nav #linksBurgerMenu ul
+    {
+        margin-left: 0;
+        padding: 24px;
+        flex-direction: column;
+    }
+
+    nav #linksBurgerMenu ul li:not(:first-child)
+    {
+        margin-top: 30px;
+    }
+
+    nav #linksBurgerMenu ul a
+    {
+        color: var(--Very-dark-blue);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    nav #linksBurgerMenu
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav #profilePicture
+    {
+        height: 25px;
+        margin-left: 22px;
+        margin-right: 24px;
+    }
+}
+
+/*header*/
+header
+{
+    display: flex;
+    flex-direction: row;
+    padding: 50px 90px;
+}
+
+header #productPicture
+{
+    height: 50vh;
+    width: 50vh;
+    background-image: url('../images/image-product-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+header #productPicture > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .navProductPicture
+{
+    display: none;
+    background-color: white;
+    border-radius: 100rem;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px;
+}
+
+header .navProductPicture[data-action="previous"]
+{    
+    background-image: url('../images/icon-previous.svg');
+    margin-left: 16px;
+}
+
+header .navProductPicture[data-action="next"]
+{    
+    background-image: url('../images/icon-next.svg');
+    margin-right: 16px;
+}
+
+header #productThumbnail ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+}
+
+header #productThumbnail img#pictureActive
+{
+    border: 3px solid var(--Orange);
+    position: relative;
+    opacity: .5;
+}
+
+header #productThumbnail ul li img
+{
+    width: calc(50vh/5);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*text part*/
+header > div:nth-child(2)
+{
+    padding: 24px;
+}
+
+header #productTitle h1
+{
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+header #productTitle p
+{
+    font-size: 14px;
+    color: var(--Orange);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+header #productDescription p
+{
+    color: var(--Dark-Grayish-blue);
+}
+
+header #productPricing > div:first-child
+{
+    display: flex;
+    flex-direction: row;
+}
+
+header #productPricing h2
+{
+    font-size: 24px;
+}
+
+header #productPricing > div:first-child > div
+{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .etiquette
+{
+    padding: 6px;
+    color: var(--Orange);
+    background-color: #FEF0E2;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 16px;
+}
+
+header #productPricing > div:nth-child(2)
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .priceOut
+{
+    color: var(--Grayish-blue);
+    text-decoration: line-through;
+}
+
+/*formulaire checkout*/
+header #checkOut
+{
+    display: flex;
+    flex-direction: row;
+}
+
+header .inputSelectQte
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--Light-grayish-blue);
+    border-radius: 9px;
+    padding: 0px 24px;
+}
+
+header .inputSelectQte input
+{
+    padding: 16px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Kumbh sans";
+}
+
+header .inputSelectQte > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .inputSelectQte > div > img
+{
+    cursor: pointer;
+}
+
+header #addToCart #addToCartButton
+{
+    position: relative;
+    display: block;
+    padding: 16px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    background-color: var(--Orange);
+    border-radius: 9px;
+    transition: all .25s ease;
+    box-shadow: 0px 10px 25px 0px hsl(26deg 100% 55% / 47%);
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+header #addToCart #addToCartButton img
+{
+    margin-right: 10px;
+    transform: translateY(2px);
+    height: 16px;
+    filter: brightness(100);
+}
+
+header #addToCart #addToCartButton:hover
+{
+    opacity: .5;
+}
+
+@media screen and (max-width:800px)
+{
+    header
+    {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    header #productPricing
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header #productPicture
+    {
+        height: 40vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 0;
+    }
+
+    header .navProductPicture
+    {
+        display: block;
+    }
+
+    #productThumbnail
+    {
+        display: none;
+    }
+
+    header #checkOut
+    {
+        flex-direction: column;
+    }
+
+    header  #addToCart #addToCartButton
+    {
+        margin-top: 16px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width:801px)
+{
+    header > div:nth-child(2)
+    {
+        margin-left: 130px;
+    }
+
+    header #checkOut .inputSelectQte
+    {
+        width: 100px;
+    }
+
+    header #checkOut .inputSelectQte input 
+    {
+        width: 60%;
+    }
+
+    header #addToCart #addToCartButton
+    {
+        width: 200px;
+    }
+
+
+    header #productPricing > div:nth-child(2)
+    {
+        margin-top: -24px;
+    }
+
+    header #productPricing
+    {
+        margin-bottom: 24px;
+    }
+}
+
+/*fin header*/

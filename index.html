@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div id="openBurgerMenu">
+
+    </div>
+    <div>
+      <img src="./images/logo.svg" alt="logo">
+    </div>
+    <div id="linksBurgerMenu">
+      <div>
+        <div id="closeBurgerMenu">
+
+        </div>
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Mens</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div id="shoppingCartContainer">
+      <img src="./images/icon-cart.svg" alt="Cart" id="shoppingCartBtn">
+      <div id="shoppingCart">
+        <div>
+          <p>Cart</p>
+        </div>
+        <div>
+          <div class="articleCart">
+            <div>
+              <img src="./images/image-product-1-thumbnail.jpg" alt="prouct article">
+            </div>
+            <div>
+              <p>Fall limited edition sneakers</p>
+              <p>$125.00 x <span id="articleQte">1</span> <span id="articleTotal">$125.00</span></p>
+            </div>
+          </div>
+          <a href="#" id="checkOutBtn">Checkout</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="./images/image-avatar.png" alt="votre photo de profil" id="profilePicture">
+    </div>
+  </div>
+</nav>
+<header>
+  <div>
+    <div id="productPicture" data-pictureid="1" data-picturename="./images/image-product-">
+      <div><div class="navProductPicture" data-action="previous"></div></div>
+      <div><div class="navProductPicture" data-action="next"></div></div>      
+    </div>
+    <div id="productThumbnail">
+      <ul>
+        <li><img src="./images/image-product-1-thumbnail.jpg" id="pictureActive" alt="photo de l'article"></li>
+        <li><img src="./images/image-product-2-thumbnail.jpg" alt="photo de l'article"></li>
+        <li><img src="./images/image-product-3-thumbnail.jpg" alt="photo de l'article"></li>
+        <li><img src="./images/image-product-4-thumbnail.jpg" alt="photo de l'article"></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div id="productTitle">
+      <p>Sneaker Company</p>
+      <h1>Fall limited edition sneakers</h1>
+    </div>
+    <div id="productDescription">
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+    </div>
+    <div id="productPricing">
+      <div>
+        <h2>$125.00</h2>
+        <div>
+          <p class="etiquette">50%</p>
+        </div>
+      </div>
+      <div>
+        <p class="priceOut">$250.00</p>
+      </div>
+    </div>
+    <div id="checkOut">
+      <div class="inputSelectQte">
+        <div>
+          <img src="./images/icon-minus.svg" alt="icone moins" class="editQte" data-action="minus">
+        </div>
+        <input type="number" id="quantity" value="0">
+        <div>
+          <img src="./images/icon-plus.svg" alt="icone plus" class="editQte" data-action="plus">
+        </div>
+      </div>
+      <div id="addToCart">
+        <a role="button" id="addToCartButton"><img src="./images/icon-cart.svg" alt="icone d'un panier"> Add to cart</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main></main>
+<script src="./js/script.js"></script>
+</body>
+</html>
